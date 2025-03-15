@@ -1,0 +1,19 @@
+import h5py
+import numpy as np
+
+# Create mock CMB initial conditions (temperature + polarization)
+with h5py.File('data/cmb_initial_conditions.h5', 'w') as f:
+    # Temperature fluctuations (μK)
+    f.create_dataset('T_fluctuations', 
+                     data=np.random.normal(0, 1e-5, (1024, 1024)), 
+                     dtype='float32')
+    
+    # Gravitational potential Φ (simplified)
+    f.create_dataset('phi_initial', 
+                     data=np.random.uniform(-1e-5, 1e-5, (1024, 1024)), 
+                     dtype='float32')
+    
+    # Add TFM parameters as attributes
+    f.attrs['alpha'] = 0.5  # Damping rate [s⁻¹]
+    f.attrs['beta'] = 1.2e-5  # Noise amplitude [s⁻¹/²]
+    f.attrs['description'] = "TFM Paper #20: Mock CMB initial conditions for stochastic time-field fluctuations."
