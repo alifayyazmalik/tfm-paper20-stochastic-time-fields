@@ -33,5 +33,5 @@ tfm-paper20/
   author = {Malik, Ali Fayyaz},  
   title = {The Stochastic Architecture of Time Fields},  
   year = {2025},  
-  url = {https://github.com/YourUsername/tfm-paper20-stochastic-time-fields}  
+  url = {https://github.com/alifayyazmalik/tfm-paper20-stochastic-time-fields.git}  
 }  
